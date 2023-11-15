@@ -20,10 +20,19 @@ if __name__ == "__main__":
     with open("flagoji-seed-sanitized.txt", "r", encoding="utf-8") as f:
         flags = f.read().splitlines()
     
-    plain = input("Enter a string to encode: ")
-    print(plain)
-    encoded = flagoji_encode(plain)
-    print(encoded)
-    decoded = flagoji_decode(encoded)
-    print(decoded)
+    decode_encode = input("Decode or encode? (d/e): ")
+    if decode_encode == "d":
+        encoded = input("Enter a string to decode: ")
+        decoded = flagoji_decode(encoded)
+        print(decoded)
+    elif decode_encode == "e":
+        plain = input("Enter a string to encode: ")
+        encoded = flagoji_encode(plain)
+        print(encoded)
+    # plain = input("Enter a string to encode: ")
+    # print(plain)
+    # encoded = flagoji_encode(plain)
+    # print(encoded)
+    # decoded = flagoji_decode(encoded)
+    # print(decoded)
 
